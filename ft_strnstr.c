@@ -20,35 +20,28 @@ static int check_same(char *haystack, const char *needle)
 	i = -1;
 	ans = 0;
 	while (needle[++i])
+	{
 		if (haystack[i] == needle[i])
 			ans++;
+	}
 	return i == ans;
 }
 
 char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t i;
-	char *t;
+	char *res;
 
-	if(haystack[0] == 0)
-		return NULL;
 	i = -1;
-	if( haystack==needle && strlen(needle) == len)
-		return (char *)haystack;
-	t = (char *)haystack;
-	while (t[++i] && i + strlen(needle) < len)
-		if (t[i] == needle[0] && check_same((char *)&t[i], (char *)needle))
-			return (char *)&t[i];
-	return needle[0] != '\0' ? NULL : (char *)t;
+	res = (char *)malloc((ft_strlen(haystack) + 1) * sizeof(res));
+	res = ft_strcpy(res, haystack);
+	while (++i < len)
+	{
+		if (res[i] == needle[0])
+			if (check_same(&res[i], needle))
+			{
+				return &res[i];
+			}
+	}
+	return needle[0] ? NULL : res;
 }
-
-// int main()
-// {
-// 		char *s1 = "AAAAAAAAAAAAA";
-// 	size_t max = strlen(s1);
-// 	char *i1 = strnstr(s1, s1, 3);
-// 	char *i2 = ft_strnstr(s1, s1, max);
-
-// 	printf("%s\n", i1);
-// 	printf("%s\n", i2);
-// }
