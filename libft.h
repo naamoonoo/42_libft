@@ -13,8 +13,9 @@
 #ifndef LIBFT_H
 #define LIBFT_H
 
-#include <string.h>
+#include <unistd.h>
 #include <stdlib.h>
+#include <string.h>
 
 void ft_putchar(char c);
 void ft_putstr(char *s);
@@ -34,6 +35,7 @@ char *ft_strncat(char *s1, const char *s2, size_t n);
 size_t ft_strlcat(char *dst, const char *src, size_t dstsize);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
+int ft_is_same(char *haystack, const char *needle);
 char *ft_strstr(const char *haystack, const char *needle);
 char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 int ft_strcmp(const char *s1, const char *s2);

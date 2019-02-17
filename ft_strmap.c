@@ -12,18 +12,18 @@
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char *ft_strmap(char const *s, char (*f)(char))
 {
-	int		i;
-	char	*res;
-	
+	int i;
+	char *res;
+
 	i = -1;
 	if (s)
 	{
 		if (!(res = ft_strnew(ft_strlen(s))))
 			return (NULL);
 		else
-			while(s[++i])
+			while (s[++i])
 				res[i] = f(s[i]);
 		return (res);
 	}

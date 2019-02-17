@@ -12,27 +12,14 @@
 
 #include "libft.h"
 
-static int	check_same(char *haystack, const char *needle)
-{
-	int i;
-	int ans;
-
-	i = -1;
-	ans = 0;
-	while (needle[++i])
-		if (haystack[i] == needle[i])
-			ans++;
-	return (i == ans);
-}
-
-char 		*ft_strstr(const char *haystack, const char *needle)
+char *ft_strstr(const char *haystack, const char *needle)
 {
 	int i;
 
 	i = -1;
 	while (haystack[++i])
 		if (haystack[i] == needle[0])
-			if (check_same((char *)&haystack[i], needle))
+			if (ft_is_same((char *)&haystack[i], needle))
 				return ((char *)&haystack[i]);
 	return (needle[0] ? NULL : (char *)haystack);
 }

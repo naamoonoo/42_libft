@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-static int	get_length(int n)
+static int get_length(int n)
 {
-	int	nbr;
-	int	len;
-	int	is_negative;
+	int nbr;
+	int len;
+	int is_negative;
 
 	is_negative = n < 0 ? 1 : 0;
 	nbr = is_negative == 1 ? n * -1 : n;
@@ -29,7 +29,7 @@ static int	get_length(int n)
 	return (++len);
 }
 
-static int	get_pow(int len)
+static int get_pow(int len)
 {
 	int i;
 	int res;
@@ -41,17 +41,17 @@ static int	get_pow(int len)
 	return (res / 10);
 }
 
-char		*ft_itoa(int n)
+char *ft_itoa(int n)
 {
-	int		len;
-	int		i;
-	int		divider;
-	char	*res;
+	int len;
+	int i;
+	int divider;
+	char *res;
 
 	i = -1;
 	len = get_length(n);
 	divider = get_pow(n < 0 ? len - 1 : len);
-	if(!(res = ft_strnew(len)))
+	if (!(res = ft_strnew(len)))
 		return (NULL);
 	if (n == -2147483648)
 		return (ft_strcpy(res, "-2147483648"));
@@ -62,7 +62,7 @@ char		*ft_itoa(int n)
 	}
 	while (++i < len)
 	{
-		res[i] =  n / divider + '0';
+		res[i] = n / divider + '0';
 		n -= (n / divider) * divider;
 		divider /= 10;
 	}

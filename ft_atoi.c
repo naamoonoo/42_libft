@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	char *ft_space_remover(char *str)
+static char *ft_space_remover(char *str)
 {
 	if (str[0] == '\t' || str[0] == ' ' || str[0] == '+' ||
 		str[0] == '\f' || str[0] == '\v' || str[0] == '\r' || str[0] == '\n')
@@ -21,17 +21,17 @@ static	char *ft_space_remover(char *str)
 		return (str);
 }
 
-int		ft_atoi(const char *str)
+int ft_atoi(const char *str)
 {
-	int		i;
-	int		mult;
-	int		ans;
-	char	*temp;
+	int i;
+	int mult;
+	int ans;
+	char *temp;
 
 	i = 0;
 	mult = 1;
 	ans = 0;
-	if(str[0] == 0)
+	if (str[0] == 0)
 		return (0);
 	temp = ft_strdup(str);
 	temp = ft_space_remover(ft_strcpy(temp, str));

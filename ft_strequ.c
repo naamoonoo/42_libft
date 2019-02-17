@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-int	ft_strequ(char const *s1, char const *s2)
+int ft_strequ(char const *s1, char const *s2)
 {
-	size_t	i;
+	size_t i;
 
 	i = -1;
 	if (s1 && s2)
@@ -23,4 +23,3 @@ int	ft_strequ(char const *s1, char const *s2)
 				return (0);
 	return (1);
 }
-

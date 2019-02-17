@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static int	get_start_idx(char const *s)
+static int get_start_idx(char const *s)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (s[i])
@@ -27,12 +27,12 @@ static int	get_start_idx(char const *s)
 	return (i);
 }
 
-char		*ft_strtrim(char const *s)
+char *ft_strtrim(char const *s)
 {
-	int		start;
-	int		end;
-	int		i;
-	char	*res;
+	int start;
+	int end;
+	int i;
+	char *res;
 
 	if (s)
 	{
