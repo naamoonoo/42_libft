@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static	int get_length(int n)
+static int	get_length(int n)
 {
 	int	nbr;
 	int	len;
@@ -29,7 +29,7 @@ static	int get_length(int n)
 	return (++len);
 }
 
-static	int get_pow(int len)
+static int	get_pow(int len)
 {
 	int i;
 	int res;
@@ -41,7 +41,7 @@ static	int get_pow(int len)
 	return (res / 10);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		len;
 	int		i;
