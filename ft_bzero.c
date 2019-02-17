@@ -14,13 +14,9 @@
 
 void ft_bzero(void *s, size_t n)
 {
-	char *p;
-	size_t i;
+	char	*p;
 
-	if (n == 0)
-		return;
-	p = (char *)s;
-	i = -1;
-	while (++i < n)
-		p[i] = '0';
+	p = s;
+	while (n-- != 0)
+		*p++ = 0;
 }

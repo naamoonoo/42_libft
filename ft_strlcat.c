@@ -33,5 +33,5 @@ size_t ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	while (j < limit)
 		dst[i++] = src[j++];
 	dst[i] = '\0';
-	return ans; //try to create
+	return ans;
 }

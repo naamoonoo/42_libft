@@ -17,32 +17,21 @@ static int check_same(char *haystack, const char *needle)
 	int i;
 	int ans;
 
-	i = 0;
+	i = -1;
 	ans = 0;
-	while (needle[i])
-	{
+	while (needle[++i])
 		if (haystack[i] == needle[i])
 			ans++;
-		i++;
-	}
 	return i == ans;
 }
 
 char *ft_strstr(const char *haystack, const char *needle)
 {
 	int i;
-	char *res;
-
 	i = -1;
-	res = (char *)malloc((ft_strlen(haystack) + 1) * sizeof(res));
-	res = ft_strcpy(res, haystack);
-	while (res[++i])
-	{
-		if (res[i] == needle[0])
-			if (check_same(&res[i], needle))
-			{
-				return &res[i];
-			}
-	}
-	return needle[0] ? NULL : res;
+	while (haystack[++i])
+		if (haystack[i] == needle[0])
+			if (check_same((char *)&haystack[i], needle))
+				return (char *)&haystack[i];
+	return needle[0] ? NULL : (char *)haystack;
 }
