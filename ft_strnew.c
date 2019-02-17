@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-char * ft_strnew(size_t size)
+char	*ft_strnew(size_t size)
 {
-	char    *res;
+	char	*res;
 
-	if(!(res = (char *)malloc((size + 1) * sizeof(char))))
-		return NULL;
+	if	(!(res = (char *)malloc((size + 1) * sizeof(char))))
+		return (NULL);
 	ft_memset(res, 0, size);
 	res[size] = '\0';
-	return res; 
+	return (res); 
 }
