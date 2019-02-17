@@ -2,9 +2,9 @@ NAME=libft.a
 CC=clang
 CFLAGS=-Wall -Wextra -Werror
 
-SRC=ft_atoi.c ft_atoi.c
+SRC=*.c
 
-OBJ=ft_atoi.o ft_itoa.o
+OBJ=*.o
 
 all: $(NAME)
 
