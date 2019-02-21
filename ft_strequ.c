@@ -14,12 +14,7 @@
 
 int ft_strequ(char const *s1, char const *s2)
 {
-	size_t i;
-
-	i = -1;
-	if (s1 && s2)
-		while (++i < ft_strlen(s1))
-			if (s1[i] != s2[i])
-				return (0);
-	return (1);
+	if (!s1 || !s2)
+		return (0);
+	return (ft_strcmp(s1, s2) == 0);
 }

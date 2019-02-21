@@ -12,46 +12,23 @@
 
 #include "libft.h"
 
-static int get_start_idx(char const *s)
+char	*ft_strtrim(char const *s)
 {
-	int i;
+	int		start;
+	int		len;
+	char	*res;
 
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-			i++;
-		else
-			break;
-	}
-	return (i);
-}
-
-char *ft_strtrim(char const *s)
-{
-	int start;
-	int end;
-	int i;
-	char *res;
-
-	if (s)
-	{
-		start = get_start_idx(s);
-		i = ft_strlen(s) - 1;
-		while (s[i])
-		{
-			if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-				i--;
-			else
-				break;
-		}
-		if (i < 0)
-			return "";
-		end = i;
-		if (!(res = ft_strnew(end - start + 2)))
-			return (NULL);
-		res = ft_strsub(s, start, end - start + 1);
-		return (res);
-	}
-	return (NULL);
+	if(s == NULL)
+		return (NULL);
+	start = ft_start_idx(s);
+	len = ft_strlen(s);
+	if (start == len)
+		len = 0;
+	while(len > 0 && ft_is_space(s[len - 1]))
+		len--;
+	len = len == 0 ? len : len - start;
+	if(!(res = (char *)malloc((len + 1) * sizeof(char))))
+		return (NULL);
+	res = ft_strsub(s, start, len);
+	return (res);
 }

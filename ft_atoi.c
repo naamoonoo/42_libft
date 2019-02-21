@@ -12,38 +12,21 @@
 
 #include "libft.h"
 
-static char *ft_space_remover(char *str)
-{
-	if (str[0] == '\t' || str[0] == ' ' || str[0] == '+' ||
-		str[0] == '\f' || str[0] == '\v' || str[0] == '\r' || str[0] == '\n')
-		return (ft_space_remover(&str[1]));
-	else
-		return (str);
-}
-
 int ft_atoi(const char *str)
 {
-	int i;
-	int mult;
-	int ans;
-	char *temp;
+	int	i;
+	int	ans;
+	int	is_neg;
 
 	i = 0;
-	mult = 1;
 	ans = 0;
-	if (str[0] == 0)
-		return (0);
-	temp = ft_strdup(str);
-	temp = ft_space_remover(ft_strcpy(temp, str));
-	if (temp[i] == '-')
+	is_neg = 0;
+	while (str[i] == '\t' || str[i] == ' '|| str[i] == '\f' ||
+	str[i] == '\v' || str[i] == '\r' || str[i] == '\n')
 		i++;
-	while (temp[i] >= '0' && temp[i] <= '9')
-		i++;
-	while (--i >= 0)
-		if (temp[i] >= '0' && temp[i] <= '9')
-		{
-			ans += (temp[i] - 48) * mult;
-			mult *= 10;
-		}
-	return (temp[++i] == '-' ? ans * -1 : ans);
+	if (str[i] == '-' || str[i] == '+')
+		is_neg = str[i++] == '-' ? 1 : 0;
+	while (str[i] >= '0' && str[i] <= '9')
+		ans = ans * 10 + (str[i++] - '0');
+	return (is_neg ? ans * -1 : ans);
 }

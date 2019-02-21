@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-char *ft_strstr(const char *haystack, const char *needle)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (haystack[++i])
 		if (haystack[i] == needle[0])
-			if (ft_is_same((char *)&haystack[i], needle))
+			if (ft_strncmp((char *)&haystack[i], needle, ft_strlen(needle)) == 0)
 				return ((char *)&haystack[i]);
 	return (needle[0] ? NULL : (char *)haystack);
 }
