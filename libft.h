@@ -76,9 +76,9 @@ int	ft_is_space(char c);
 
 typedef struct s_list
 {
-    void *content;
-    size_t content_size;
-    struct s_list *next;
+	void *content;
+	size_t content_size;
+	struct s_list *next;
 } t_list;
 
 t_list *ft_lstnew(void const *content, size_t content_size);
