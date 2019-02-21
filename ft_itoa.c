@@ -22,17 +22,17 @@ char	*ft_itoa(int n)
 	i = 0;
 	len = ft_number_length(n < 0 ? n * -1 : n);
 	dv = ft_pow(len);
-	if(!(res = (char *)malloc((n < 0 ? len + 2 : len + 1) * sizeof(char))))
+	if (!(res = (char *)malloc((n < 0 ? len + 2 : len + 1) * sizeof(char))))
 		return (NULL);
 	if (n == -2147483648)
-		return ft_strcpy(res, "-2147483648");
+		return (ft_strcpy(res, "-2147483648"));
 	if (n < 0)
 	{
 		n *= -1;
 		res[i++] = '-';
-		len += 1;
+		len++;
 	}
-	while(i < len)
+	while (i < len)
 	{
 		res[i++] = n / dv + '0';
 		n -= (n / dv) * dv;
