@@ -28,12 +28,12 @@ static char	**make_array(char const *s, char c)
 	return (res);
 }
 
-char 		**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	unsigned int i;
-	int len;
-	int start;
-	char **res;
+	unsigned int	i;
+	int				len;
+	int				start;
+	char			**res;
 
 	if (s)
 	{

@@ -12,7 +12,15 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static void	minus_handling(int *n, char *res, int *len, int *i)
+{
+	*n = *n * -1;
+	res[*i] = '-';
+	*i = *i + 1;
+	*len = *len + 1;
+}
+
+char		*ft_itoa(int n)
 {
 	char	*res;
 	int		len;
@@ -27,11 +35,7 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 		return (ft_strcpy(res, "-2147483648"));
 	if (n < 0)
-	{
-		n *= -1;
-		res[i++] = '-';
-		len++;
-	}
+		minus_handling(&n, res, &len, &i);
 	while (i < len)
 	{
 		res[i++] = n / dv + '0';
