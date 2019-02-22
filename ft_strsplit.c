@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-static char **make_array(char const *s, char c)
+static char	**make_array(char const *s, char c)
 {
-	unsigned int i;
-	int len;
-	char **res;
+	unsigned int	i;
+	int				len;
+	char			**res;
 
 	i = -1;
 	len = s[0] == c ? 0 : 1;
@@ -25,10 +25,10 @@ static char **make_array(char const *s, char c)
 			len++;
 	if (!(res = (char **)malloc((len + 1) * sizeof(char *))))
 		return (NULL);
-	return res;
+	return (res);
 }
 
-char **ft_strsplit(char const *s, char c)
+char 		**ft_strsplit(char const *s, char c)
 {
 	unsigned int i;
 	int len;
