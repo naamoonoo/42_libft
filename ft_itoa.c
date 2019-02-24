@@ -32,7 +32,7 @@ char		*ft_itoa(int n)
 	dv = ft_pow(len);
 	if (!(res = (char *)malloc((n < 0 ? len + 2 : len + 1) * sizeof(char))))
 		return (NULL);
-	if (n == -2147483648)
+	if (n == MAX_INT)
 		return (ft_strcpy(res, "-2147483648"));
 	if (n < 0)
 		minus_handling(&n, res, &len, &i);

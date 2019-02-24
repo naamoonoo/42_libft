@@ -28,6 +28,7 @@ typedef struct		s_list
 */
 
 # define ABS(x) (x * -1)
+# define MAX_INT -2147483648
 
 /*
 	memory handling
