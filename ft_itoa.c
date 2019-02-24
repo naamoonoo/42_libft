@@ -14,7 +14,7 @@
 
 static void	minus_handling(int *n, char *res, int *len, int *i)
 {
-	*n = *n * -1;
+	*n = ABS(*n);
 	res[*i] = '-';
 	*i = *i + 1;
 	*len = *len + 1;
